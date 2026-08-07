@@ -18,4 +18,4 @@ jobs:
                  echo "This is variable from actions: ${{ VARS.ID }}"
           - name: secret using docker login
             run: |
-              echo ${{ secrets.REGPASS }} | docker login --username ${{ secrets.REGUSER }} --password-stdin  git.mevijay.dev
+              echo ${{ secrets.REGPASS }} | docker login --username ${{ secrets.REGUSER }} --password-stdin  ${{ vars.ART_URL }}

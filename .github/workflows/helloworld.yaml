@@ -10,7 +10,7 @@ on:
     branches:
      -  main
   schedule:
-    - cron: '0/2 * * * *# every day at midnight'
+    - cron: '0/2 * * * *' # every day at midnight
 jobs:
     hello-world:
         runs-on: ubuntu-latest

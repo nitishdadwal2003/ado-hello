@@ -40,3 +40,12 @@ jobs:
           - name: secret using docker login
             run: |
               echo ${{ secrets.REGPASS }} | docker login --username ${{ secrets.REGUSER }} --password-stdin  ${{ vars.ART_URL }}
+          - name: i will run when dev selected
+            if: ${{ inputs.environment == 'DEV'}}
+            run: "This step will run when only dev environment is selected"
+          - name: i will run when dev selected
+            if: ${{ inputs.environment == 'QA'}}
+            run: "This step will run when only QA environment is selected"
+          - name: i will run when dev selected
+            if: ${{ inputs.environment == 'PROD'}}
+            run: "This step will run when only DEV environment is selected"

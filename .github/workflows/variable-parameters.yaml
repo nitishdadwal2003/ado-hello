@@ -1,6 +1,11 @@
 name: demo of variable and parmeters
 on:
     workflow_dispatch:
+      inputs:
+        environment:
+          description: 'Environment to deploy'
+          required: true
+          default: 'DEV'
 env:
   name: "RAM"
   environment: "DEV"

@@ -8,9 +8,9 @@ jobs:
     hello-world:
         runs-on: ubuntu-latest
         steps:
-            - run: |
-                echo "Hello world"
-                echo "namaste duniya"
-              name: Hello world steps
-            - name: printing environment variables
-              run: printenv
+            - name: PR info
+              run: | 
+                echo "PR title: ${{ github.event.pull_request.title }}"
+                echo "PR body: ${{ github.event.pull_request.body }}"
+                echo "From branch: ${{ github.event.pull_request.head.ref }}"
+                echo " To branch: ${{ github.event.pull_request.base.ref }}""

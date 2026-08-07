@@ -1,0 +1,15 @@
+name: demo of variable and parmeters
+on:
+    workflow_dispatch:
+env:
+  name: "RAM"
+  environment: "DEV"
+   
+jobs:
+    variable-parameters:
+        runs-on: ubuntu-latest
+        steps:
+          - name: demo of varaible and parameters
+            run: |
+              echo "Name: ${{ env.name }}"
+              echo "Environment: ${{ env.environment }}"

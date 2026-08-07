@@ -8,7 +8,7 @@ on:
           default: 'DEV'
 env:
   name: "RAM"
-  environment: "DEV"
+  environment: "${{ inputs.environment }}"
    
 jobs:
     variable-parameters:

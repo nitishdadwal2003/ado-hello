@@ -5,7 +5,12 @@ jobs:
     hello-world:
         runs-on: gh-agent
         steps:
+<<<<<<< HEAD
             - run: |
                 echo "Hello world"
                 echo "namaste duniya"
               name: Hello world steps
+=======
+            - name: Hello world step
+              run: echo "Hello world"
+>>>>>>> d0f48f9dd871cb911c015f7e4330626a5a5f3a45

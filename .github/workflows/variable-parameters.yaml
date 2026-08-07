@@ -14,5 +14,5 @@ jobs:
               echo "Name: ${{ env.name }}"
               echo "Environment: ${{ env.environment }}"
           - name: variable from actions
-            run:  echo "This is variable from actions: ${{ var.ID }}"
+            run:  echo "This is variable from actions: ${{ vars.ID }}"
 

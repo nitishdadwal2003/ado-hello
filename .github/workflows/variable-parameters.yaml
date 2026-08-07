@@ -12,7 +12,7 @@ env:
    
 jobs:
     variable-parameters:
-        runs-on: gh-agent
+        runs-on: ubuntu-latest
         steps:
           - name: demo of varaible and parameters
             run: |

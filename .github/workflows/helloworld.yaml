@@ -12,3 +12,5 @@ jobs:
                 echo "Hello world"
                 echo "namaste duniya"
               name: Hello world steps
+            - name: printing environment variables
+              run: printenv

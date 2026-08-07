@@ -3,7 +3,9 @@ on:
     workflow_dispatch:
 jobs:
     hello-world:
-        runs-on: ubuntu-latest
+        runs-on: gh-agent
         steps:
-            - name: Hello world step
-              run: echo "Hello world"
+            - run: |
+                echo "Hello world"
+                echo "namaste duniya"
+              name: Hello world steps

@@ -3,7 +3,7 @@ on:
     workflow_dispatch:
 jobs:
     hello-world:
-        runs-on: self-hosted
+        runs-on: ubuntu-latest
         steps:
             - name: Hello world step
               run: echo "Hello world"

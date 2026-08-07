@@ -16,4 +16,7 @@ jobs:
           - name: variable from actions
             run: |
                  echo "This is variable from actions: ${{ VARS.ID }}"
+          - name: secret using docker login
+            run: |
+              echo ${{ secrets.REGPASS }} | docker login --username ${{ secrets.REGUSER }} --password-stdin          
 

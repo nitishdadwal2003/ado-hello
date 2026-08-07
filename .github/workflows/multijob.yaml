@@ -4,18 +4,22 @@ on:
 jobs:
     jobA:
       runs-on: ubuntu-latest
+      outputs:
+        rinku: ${{ steps.joba.outputs.tag }}
       steps:
         - name: jobA
-          run: echo "This is jobA"
+          id: joba
+          run: |
+           echo "generating tag for docker"
+           echo "tag=1.0.0" >> $GITHUB_OUTPUT
+
+
     jobB:
         runs-on: ubuntu-latest
         needs: jobA
+
         steps:
             - name: jobB
-              run: echo "This is jobB, it depends on jobA"
-    jobC:
-        runs-on: ubuntu-latest
-        needs: jobB
-        steps:
-            - name: jobC
-              run: echo "This is jobB, it depends on jobA"
+              run: |
+               echo "jobB is running"
+               echo "tag from jobA: ${{ needs.jobA.outputs.rinku }}"

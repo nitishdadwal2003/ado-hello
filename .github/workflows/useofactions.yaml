@@ -1,0 +1,28 @@
+
+name: actions use
+
+on:
+  workflow_dispatch:
+    inputs:
+      java_version:
+        description: "Java version"
+        required: true
+        default: "17"
+
+jobs:
+  javabuild:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: ${{ inputs.java_version }}
+          distribution: "temurin"
+
+      - name: Print Java version
+        run: java --version
+

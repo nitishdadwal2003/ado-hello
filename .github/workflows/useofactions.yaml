@@ -31,5 +31,10 @@ jobs:
           username: ${{ secrets.REGUSER }}
           password: ${{ secrets.REGPASS }}
           registry: ${{ VARS.ART_URL }}
+      - name: build and push docker image
+        uses: docker/build-push-action@v7
+        with:
+          push: true
+          tags: ${{ secrets.REGUSER }}/myapp:v1.0.${{ github.run_number }}
         
 

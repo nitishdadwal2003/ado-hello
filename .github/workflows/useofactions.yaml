@@ -31,6 +31,8 @@ jobs:
           username: ${{ secrets.REGUSER }}
           password: ${{ secrets.REGPASS }}
           registry: ${{ VARS.ART_URL }}
+      - name: setup docker buildx
+        uses: docker/setup-buildx-action@v4
       - name: build and push docker image
         uses: docker/build-push-action@v7
         with:
